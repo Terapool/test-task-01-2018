@@ -4,12 +4,12 @@
 
 * To launch you need the following commands:
 
-npm i
+> npm i
 
-npm init
+> npm init
 
-gulp build
+> gulp build
 
-gulp prod
+> gulp prod
 
 then launch the file dist/index.html

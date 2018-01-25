@@ -1,7 +1,6 @@
 var gulp        = require('gulp'),
-    browserSync = require('browser-sync').create(),
+    browserSync = require('browser-sync'),
     rename      = require('gulp-rename'),
-    reload      = browserSync.reload,
     sass        = require('gulp-sass'),
     concat      = require('gulp-concat');
 
@@ -13,19 +12,26 @@ var params = {
 
 // Main commands
 
-gulp.task('default', ['server']);
+gulp.task('default', ['watch']);
 
-gulp.task('build', ['sass']);
+gulp.task('build', ['sass','lib-fa','fonts']);
 
-gulp.task('prod', ['prod-html', 'prod-css'])
+gulp.task('prod', ['prod-html', 'prod-css', 'prod-img', 'prod-fonts','prod-lib-fa']);
+
 
 gulp.task('server', function() {
-    browserSync.init({
-        server: params.out
+    browserSync({
+        server: {
+            baseDir: 'app'
+        },
+        notify: false
     });
-    gulp.watch(params.htmlSrc, ['build', 'prod']);
-    gulp.watch('app/blocks/**/*.sass', ['build', 'prod']);
+});
 
+
+gulp.task('watch', ['build','server'], function() {
+    gulp.watch('app/*.html', browserSync.reload);
+    gulp.watch(['app/blocks/**/*.sass','app/blocks/*.sass'], ['sass']);
 });
 
 // Builders
@@ -36,20 +42,39 @@ gulp.task('sass', function() {
         .pipe(sass())
         .pipe(concat('min-1200px.css'))
         .pipe(gulp.dest('app/css'))
-        .pipe(reload({stream: true}));
+        .pipe(browserSync.reload({stream: true}));
     // Building min-992px.css:
     gulp.src(['app/blocks/*.sass','app/blocks/blocks-min1200px/**/*.sass','app/blocks/blocks-min992px/**/*.sass'])
         .pipe(sass())
         .pipe(concat('min-992px.css'))
         .pipe(gulp.dest('app/css'))
-        .pipe(reload({stream: true}));
+        .pipe(browserSync.reload({stream: true}));
     // Building min-768px.css:
     gulp.src(['app/blocks/*.sass','app/blocks/blocks-min1200px/**/*.sass','app/blocks/blocks-min992px/**/*.sass','app/blocks/blocks-min768px/**/*.sass'])
         .pipe(sass())
         .pipe(concat('min-768px.css'))
         .pipe(gulp.dest('app/css'))
-        .pipe(reload({stream: true}));
+        .pipe(browserSync.reload({stream: true}));
 });
+
+
+gulp.task('lib-fa', function(){
+    gulp.src(['app/libs/font-awesome/fonts/*.*'])
+        .pipe(gulp.dest('app/fonts'));
+
+    gulp.src(['app/libs/font-awesome/css/font-awesome.min.css'])
+        .pipe(gulp.dest('app/css'));
+
+});
+
+
+gulp.task('fonts', function() {
+    gulp.src(['app/fonts-custom/*.*'])
+        .pipe(gulp.dest('app/fonts'));
+})
+
+
+
 
 //production commands
 
@@ -66,5 +91,25 @@ gulp.task('prod-css', function() {
         .pipe(gulp.dest('dist/css'))
         .pipe(reload({stream: true}));
 });
+gulp.task('prod-img', function() {
+    gulp.src(['app/img/**/*.png','app/img/**/*.gif','app/img/**/*.jpg'])
+        .pipe(gulp.dest('dist/img'))
+        .pipe(reload({stream: true}));
+});
+
+gulp.task('prod-fonts', function() {
+    gulp.src(['app/fonts/**/*.ttf','app/fonts/**/*.woff','app/fonts/**/*.woff2'])
+        .pipe(gulp.dest('dist/fonts'))
+        .pipe(reload({stream: true}));
+});
+
+gulp.task('prod-lib-fa', function(){
+    gulp.src(['app/libs/font-awesome/fonts/*.*'])
+        .pipe(gulp.dest('dist/fonts'));
+
+    gulp.src(['app/libs/font-awesome/css/font-awesome.min.css'])
+        .pipe(gulp.dest('dist/css'));
+
+})
 
 
