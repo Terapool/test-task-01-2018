@@ -18,8 +18,26 @@ a {
   font-family: 'PF Agora Sans Pro';
   src: url(../fonts/PFAgoraSansPro-Regular.woff) format("woff"), url(../fonts/PFAgoraSansPro-Regular.woff2) format("woff2"), url(../fonts/PFAgoraSansPro-Regular.ttf) format("truetype"); }
 
+.footer-info, .footer-menu {
+  color: #000;
+  font-size: 10px;
+  font-family: "PF Agora Sans Pro", Arial, "Lucida Sans";
+  line-height: 16px; }
+
+html {
+  height: 100%; }
+
 body {
-  background-color: grey; }
+  background-color: grey;
+  height: 100%; }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+
+.content {
+  flex: 1 0 auto; }
 
 .wrapper-header {
   width: 100%;
@@ -28,15 +46,15 @@ body {
   top: 0;
   z-index: 100; }
 
-.header, .menu_position {
+.header, .menu_position, .footer {
   margin: 0 auto;
   width: 1178px;
   padding: 24px 11px 0 11px; }
   @media screen and (max-width: 1200px) {
-    .header, .menu_position {
+    .header, .menu_position, .footer {
       width: 970px; } }
   @media screen and (max-width: 992px) {
-    .header, .menu_position {
+    .header, .menu_position, .footer {
       width: 746px; } }
 
 .header {
@@ -107,3 +125,19 @@ body {
     color: #000; }
   .menu_position {
     margin: 130px auto 0; }
+
+.footer {
+  height: 100px;
+  background-color: #fff;
+  flex: 0 0 auto; }
+  .footer-line1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; }
+
+.footer-info {
+  max-width: 330px; }
+
+.footer-menu {
+  list-style-type: none; }
