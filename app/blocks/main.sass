@@ -1,30 +1,40 @@
-$siteBg: #FFF
+//Screens for responsive design
+$widthDesktop: 1200px
+$widthTablet1: 992px
+$widthTablet2: 768px
 
-*
-  margin: 0
-  padding: 0
+$hMargin: 11px
+$vMargin: 24px
 
-a
-  text-decoration: none
-  color: inherit
+//Colors
+$color1: #000
+$colorBg: #fff
+//Fonts
+$familyRL: 'Roboto Light', Arial, 'Lucida Sans'
+$familyRR: 'Roboto Regular', Arial, 'Lucida Sans'
+$familyAN: 'PF Agora Sans Pro', Arial, 'Lucida Sans'
 
+//Header
+$headerHeight: 130px
 
-@font-face
-  font-family: 'Roboto Regular'
-  src: url(../fonts/Roboto-Regular.woff) format('woff'),  url(../fonts/Roboto-Regular.woff2) format('woff2'),  url(../fonts/Roboto-Regular.ttf) format('truetype')
-
-
-@font-face
-  font-family: 'Roboto Light'
-  src: url(../fonts/Roboto-Light.woff) format('woff'),  url(../fonts/Roboto-Light.woff2) format('woff2'),  url(../fonts/Roboto-Light.ttf) format('truetype')
-
+//Top menu
+$topMenuHeight: 60px
 
 
-body
-  background-color: grey
+@import "reset"
+@import "fonts"
+@import "page-structure"
 
-.header-wrapper
-  width: 100%
-  height: 170px
-  background: $siteBg
-  position: fixed
+
+@import "header/header"
+@import "login/login"
+@import "logo/logo"
+@import "search/search"
+@import "social/social"
+
+@import "menu/menu"
+
+
+
+
+

@@ -38,21 +38,9 @@ gulp.task('watch', ['build','server'], function() {
 
 gulp.task('sass', function() {
     //Our responsive is mobile first, so default style is main + block-min1200px
-    gulp.src(['app/blocks/*.sass','app/blocks/blocks-min1200px/**/*.sass'])
+    gulp.src('app/blocks/main.sass')
         .pipe(sass())
-        .pipe(concat('min-1200px.css'))
-        .pipe(gulp.dest('app/css'))
-        .pipe(browserSync.reload({stream: true}));
-    // Building min-992px.css:
-    gulp.src(['app/blocks/*.sass','app/blocks/blocks-min1200px/**/*.sass','app/blocks/blocks-min992px/**/*.sass'])
-        .pipe(sass())
-        .pipe(concat('min-992px.css'))
-        .pipe(gulp.dest('app/css'))
-        .pipe(browserSync.reload({stream: true}));
-    // Building min-768px.css:
-    gulp.src(['app/blocks/*.sass','app/blocks/blocks-min1200px/**/*.sass','app/blocks/blocks-min992px/**/*.sass','app/blocks/blocks-min768px/**/*.sass'])
-        .pipe(sass())
-        .pipe(concat('min-768px.css'))
+        .pipe(concat('styles.css'))
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({stream: true}));
 });

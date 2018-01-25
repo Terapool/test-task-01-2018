@@ -1,0 +1,19 @@
+body
+  background-color: grey
+
+.wrapper-header
+  width: 100%
+  heigth: $headerHeight
+  position: fixed
+  top: 0
+  z-index: 100
+
+%block-main
+  margin: 0 auto
+  width: $widthDesktop - 2 * $hMargin
+  padding: $vMargin $hMargin 0 $hMargin
+
+  @media screen and (max-width: $widthDesktop)
+    width: $widthTablet1 - 2 * $hMargin
+  @media screen and (max-width: $widthTablet1)
+    width: $widthTablet2 - 2 * $hMargin
