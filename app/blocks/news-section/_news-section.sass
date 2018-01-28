@@ -1,0 +1,55 @@
+.news-section
+    width: 100%
+
+    &__headline
+        font-color: $color1
+        margin-top: $vMargin
+        font-family: $familyRB
+        font-size: 33px
+        text-align: left
+        width: 100%
+        flex-shrink: 2
+    &-item
+        width: $columnWidth
+        @media screen and (max-width: $widthDesktop)
+            width: $columnWidth2
+
+        &__img
+            width: 100%
+
+        &__headline
+            margin-top: $vMargin
+            font-family: $familyAB
+            color: $color1
+            text-align: left
+            font-size: 19px
+        &__info
+            margin-top: $vMarginSm
+            font-family: $familyAN
+            font-size: 10px
+            span
+                color: $color1
+            a
+                color: $colorMarked
+        &__content
+            margin-top: $vMargin
+            color: $color1
+            font-family: $familyAN
+            font-size: 16px
+            line-height: 20px
+        &__button
+            width: 96px
+            margin-top: $vMargin
+            @extend %button-template
+
+    &-item_3rd-item
+        @media screen and (max-width: $widthTablet1)
+            display: none
+
+
+.group
+    width: 100%
+    display: flex
+    justify-content: space-between
+    margin-top: $vMargin
+

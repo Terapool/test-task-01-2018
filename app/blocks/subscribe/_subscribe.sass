@@ -1,0 +1,39 @@
+.subscribe
+  width: 100%
+
+  &__text
+    font-family: $familyAN
+    color: $color1
+    font-size: 16px
+    line-height: 21px
+
+  &-form
+
+    &__email
+      display: block
+      border: 1px solid $color1
+      height: 24px
+      width: 190px
+      font-family: $familyRL
+      font-size: 16px
+      color: $color1
+      margin-top: $vMarginSm
+      text-indent: $hMargin
+
+    &__name
+      display: block
+      border: 1px solid $color1
+      height: 24px
+      width: 130px
+      font-family: $familyRL
+      font-size: 16px
+      color: $color1
+      margin-top: 10px
+      text-indent: $hMargin
+
+    &__button
+      @extend %button-template //  blocks/button
+      display: block
+      margin-top: $vMarginSm
+      width: 120px
+

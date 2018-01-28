@@ -14,10 +14,31 @@ body
 
 .wrapper-header
   width: 100%
-  heigth: $headerHeight
+  height: $headerHeight
   position: fixed
   top: 0
   z-index: 100
+
+.wrapper-news
+  display: flex
+  justify-content: space-between
+  @extend %block-main
+  background: $colorBg
+  &-section1
+    width: $columnWidth * 3 + $hMargin * 4
+    @media screen and (max-width: $widthDesktop)
+      width: $columnWidth2 * 3 + $hMargin * 4
+    @media screen and (max-width: $widthTablet1)
+      width: $columnWidth2 * 2 + $hMargin * 2
+      overflow: hidden
+
+
+  &-section2
+    width: $columnWidth
+    @media screen and (max-width: $widthDesktop)
+      width: $columnWidth2
+    @media screen and (max-width: $widthTablet1)
+      width: $columnWidth3
 
 
 %block-main
@@ -29,3 +50,10 @@ body
     width: $widthTablet1 - 2 * $hMargin
   @media screen and (max-width: $widthTablet1)
     width: $widthTablet2 - 2 * $hMargin
+
+%block-50percents
+  width: ($widthDesktop - 2 * $hMargin - $hMarginBig)/2
+  @media screen and (max-width: $widthDesktop)
+    width: ($widthTablet1 - 2 * $hMargin - $hMarginBig)/2
+  @media screen and (max-width: $widthTablet1)
+    width: ($widthTablet2 - 2 * $hMargin - $hMarginBig)/2

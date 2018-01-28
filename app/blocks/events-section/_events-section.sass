@@ -1,0 +1,56 @@
+.events-section
+    width: 100%
+
+    &-headline
+        margin-bottom: $vMargin + 4px
+        font-family: $familyAN
+        font-color: $color1
+        font-size: 16px
+
+
+        &__event-category-link
+
+        &__event-date-category-link
+
+    &-item
+        display: flex
+        justify-content: space-between
+        margin-bottom: 18px
+
+
+        &-section1
+            width: $eventThumb
+
+        &-section2
+            width: $columnWidth - $eventThumb - $hMargin
+            @media screen and (max-width: $widthDesktop)
+                width: $columnWidth2 - $eventThumb - $hMargin
+            @media screen and (max-width: $widthTablet1)
+                width: $columnWidth3 - $eventThumb - $hMargin
+
+        &__link-img
+
+        &__link-headline
+
+        &__link-img
+
+        &__img
+            width: $eventThumb
+            height: $eventThumb
+
+        &__headline
+            font-family: $familyAB
+            font-size: 16px
+            color: $color1
+            margin-bottom: 5px
+
+        &__excerpt
+            font-family: $familyAN
+            font-size: 14px
+
+
+    &_margin-top1
+        margin-top: 40px
+
+
+

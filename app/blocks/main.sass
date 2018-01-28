@@ -1,18 +1,34 @@
 //Screens for responsive design
-$widthDesktop: 1200px
-$widthTablet1: 992px
-$widthTablet2: 768px
+$widthDesktop: 1200px // width of content for Desktop
+$widthTablet1: 992px // width of content for Tablet1
+$widthTablet2: 768px // width of content for Tablet2
+
+$columnWidth: 278px //news and events columns for Desktop
+$columnWidth2: 226px  //news and events columns for Tablet1, news columns for Tablet2
+$columnWidth3: 250px // event column for Tablet2
 
 $hMargin: 11px
+$hMarginBig: 28px
 $vMargin: 24px
+$vMarginSm: 15px
+
+$eventThumb: 60px
+
 
 //Colors
 $color1: #000
+$color2: #3d3d3d
+$colorMarked: #1b65a3
 $colorBg: #fff
+$colorBg2: #E6E4E4
 //Fonts
 $familyRL: 'Roboto Light', Arial, 'Lucida Sans'
+$familyRM: 'Roboto Medium', Arial, 'Lucida Sans'
+$familyRMI: 'Roboto Medium Italic', Arial, 'Lucida Sans'
 $familyRR: 'Roboto Regular', Arial, 'Lucida Sans'
+$familyRB: 'Roboto Bold', Arial, 'Lucida Sans'
 $familyAN: 'PF Agora Sans Pro', Arial, 'Lucida Sans'
+$familyAB: 'PF Agora Bold', Arial, 'Lucida Sans'
 
 //Header
 $headerHeight: 130px
@@ -30,14 +46,17 @@ $footerHeight: 100px
 
 
 @import "header/header"
+@import "button/button"
 @import "login/login"
 @import "logo/logo"
 @import "search/search"
 @import "social/social"
-
 @import "menu/menu"
+@import "news-section/news-section"
+@import "events-section/events-section"
+@import "subscribe/subscribe"
+@import "top-news/top-news"
 @import "footer/footer"
-
 @import "footer-info/footer-info"
 @import "footer-menu/footer-menu"
 

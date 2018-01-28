@@ -7,8 +7,25 @@
   src: url(../fonts/Roboto-Light.woff) format('woff'),  url(../fonts/Roboto-Light.woff2) format('woff2'),  url(../fonts/Roboto-Light.ttf) format('truetype')
 
 @font-face
+  font-family: 'Roboto Medium'
+  src: url(../fonts/Roboto-Medium.woff) format('woff'),  url(../fonts/Roboto-Medium.woff2) format('woff2'),  url(../fonts/Roboto-Medium.ttf) format('truetype')
+
+@font-face
+  font-family: 'Roboto Medium Italic'
+  src: url(../fonts/Roboto-MediumItalic.woff) format('woff'),  url(../fonts/Roboto-MediumItalic.woff2) format('woff2'),  url(../fonts/Roboto-MediumItalic.ttf) format('truetype')
+
+@font-face
+  font-family: 'Roboto Bold'
+  src: url(../fonts/Roboto-Bold.woff) format('woff'),  url(../fonts/Roboto-Bold.woff2) format('woff2'),  url(../fonts/Roboto-Bold.ttf) format('truetype')
+
+@font-face
   font-family: 'PF Agora Sans Pro'
   src: url(../fonts/PFAgoraSansPro-Regular.woff) format('woff'),  url(../fonts/PFAgoraSansPro-Regular.woff2) format('woff2'),  url(../fonts/PFAgoraSansPro-Regular.ttf) format('truetype')
+
+@font-face
+  font-family: 'PF Agora Bold'
+  src: url(../fonts/PFAgoraSansPro-Bold.woff) format('woff'),  url(../fonts/PFAgoraSansPro-Bold.woff2) format('woff2'),  url(../fonts/PFAgoraSansPro-Bold.ttf) format('truetype')
+
 
 
 %font-footer
@@ -16,4 +33,13 @@
   font-size: 10px
   font-family: $familyAN
   line-height: 16px
+%font-h1
+  font-family: $familyRM
+  color: $color1
+  font-size: 38px
+  text-align: left
+  @media screen and (max-width: $widthDesktop)
+    font-size: 34px
+  @media screen and (max-width: $widthTablet1)
+    font-size: 30px
 

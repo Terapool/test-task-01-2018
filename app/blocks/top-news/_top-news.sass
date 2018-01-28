@@ -1,0 +1,34 @@
+.top-news
+  @extend %block-main
+  background-color: $colorBg
+  &-item
+    display: flex
+    justify-content: space-between
+    &-img
+      @extend %block-50percents
+      &__img
+        width: 100%
+
+    &-excerpt
+      @extend %block-50percents
+      &__headline
+        @extend %font-h1
+      &__subheader
+        font-family: $familyRMI
+        color: $color2
+        font-style: italic
+        font-size: 20px
+        line-height: 24px
+        text-align: left
+        margin-top: $vMargin
+      &__text
+        font-family: $familyAN
+        color: $color1
+        font-size: 16px
+        line-height: 25px
+        text-align: left
+        margin-top: $vMargin
+
+
+
+

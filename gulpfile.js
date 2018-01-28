@@ -59,45 +59,33 @@ gulp.task('lib-fa', function(){
 gulp.task('fonts', function() {
     gulp.src(['app/fonts-custom/*.*'])
         .pipe(gulp.dest('app/fonts'));
-})
-
-
+});
 
 
 //production commands
 
 
+gulp.task('prod',['build', 'prod-html', 'prod-css', 'prod-img', 'prod-fonts']);
+
+
 gulp.task('prod-html', function() {
-    gulp.src(params.htmlSrc)
-        .pipe(rename('index.html'))
+    gulp.src('app/*.html')
         .pipe(gulp.dest(params.out))
-        .pipe(reload({stream: true}));
 });
 
 gulp.task('prod-css', function() {
     gulp.src('app/css/**/*.css')
         .pipe(gulp.dest('dist/css'))
-        .pipe(reload({stream: true}));
 });
+
 gulp.task('prod-img', function() {
     gulp.src(['app/img/**/*.png','app/img/**/*.gif','app/img/**/*.jpg'])
         .pipe(gulp.dest('dist/img'))
-        .pipe(reload({stream: true}));
 });
 
 gulp.task('prod-fonts', function() {
     gulp.src(['app/fonts/**/*.ttf','app/fonts/**/*.woff','app/fonts/**/*.woff2'])
         .pipe(gulp.dest('dist/fonts'))
-        .pipe(reload({stream: true}));
 });
-
-gulp.task('prod-lib-fa', function(){
-    gulp.src(['app/libs/font-awesome/fonts/*.*'])
-        .pipe(gulp.dest('dist/fonts'));
-
-    gulp.src(['app/libs/font-awesome/css/font-awesome.min.css'])
-        .pipe(gulp.dest('dist/css'));
-
-})
 
 
